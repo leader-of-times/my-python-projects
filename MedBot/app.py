@@ -6,7 +6,7 @@ import os, sys
 
 app = Flask(__name__)
 
-app.secret_key = 'f68f1e393e4dbe0f963658b1fdc9b5c8b0b6829570546cd9'
+app.secret_key = ''
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///default.db'
 app.config['SQLALCHEMY_BINDS'] = {
