@@ -1,0 +1,134 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+    transition: background-color 0.3s ease;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+/* Chat container */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 30px;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.start-chat-btn {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.start-chat-btn:hover {
+    background-color: #45a049;
+}
+
+/* Chat box */
+.chat-box {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background-color: white;
+    overflow-y: auto;
+    max-height: 400px;
+    padding: 15px;
+}
+
+.chat-window {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.user-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+/* Chat bubbles */
+.chat-message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.chat-message .avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.chat-message .message {
+    padding: 12px;
+    border-radius: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.chat-message.user .message {
+    background-color: #4CAF50;
+    color: white;
+    margin-left: auto;
+}
+
+.chat-message.bot .message {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+/* Footer with Dark Mode toggle */
+.footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.theme-label {
+    color: #333;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#theme-toggle {
+    cursor: pointer;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    .chat-container {
+        padding: 10px;
+    }
+
+    .start-chat-btn {
+        width: 100%;
+    }
+}

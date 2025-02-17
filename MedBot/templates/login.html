@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Doc Bot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Styles */
+        .input-field:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 flex justify-center items-center h-screen">
+    <div class="bg-gray-800 p-8 rounded-xl shadow-lg w-96">
+        <h2 class="text-white text-2xl font-bold mb-6 text-center">Login to Telemedicine</h2>
+        
+        <!-- Error message (conditionally shown) -->
+        {% if error %}
+            <p class="text-red-500 text-sm mb-4">{{ error }}</p>
+        {% endif %}
+        
+        <form action="{{ url_for('login') }}" method="POST" class="flex flex-col space-y-4">
+            <!-- Email input -->
+            <label for="email" class="text-gray-300 mb-1">Email</label>
+            <input 
+                type="email" 
+                name="email" 
+                placeholder="Enter your email" 
+                required 
+                class="input-field p-3 bg-gray-700 text-white rounded focus:ring-2 focus:ring-blue-500">
+
+            <!-- Password input -->
+            <label for="password" class="text-gray-300 mb-1">Password</label>
+            <input 
+                type="password" 
+                name="password" 
+                placeholder="Enter your password" 
+                required 
+                class="input-field p-3 bg-gray-700 text-white rounded focus:ring-2 focus:ring-blue-500">
+
+            <!-- User Type dropdown -->
+            <label for="user_type" class="text-gray-300 mb-1">User Type</label>
+            <select 
+                name="user_type" 
+                required 
+                class="input-field p-3 bg-gray-700 text-white rounded focus:ring-2 focus:ring-blue-500">
+                <option value="" disabled selected>Select User Type</option>
+                <option value="doctor">Doctor</option>
+                <option value="patient">Patient</option>
+            </select>
+
+            <!-- Login Button -->
+            <button type="submit" class="bg-blue-500 p-3 rounded text-white font-bold hover:bg-blue-600 transition-all duration-300">
+                Login
+            </button>
+        </form>
+
+        <p class="text-gray-400 mt-4 text-center">
+            Don't have an account? <a href="/signup" class="text-blue-400 hover:underline">Sign Up</a>
+        </p>
+    </div>
+</body>
+</html>
