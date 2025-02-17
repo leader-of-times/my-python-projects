@@ -4,9 +4,9 @@ from google import genai
 import googlemaps
 
 # Initialize Google Maps client with API key
-gmaps = googlemaps.Client(key="AIzaSyBYNPehQKEcoDGodY50ma4a9PWasmixEK4")
+gmaps = googlemaps.Client(key="")
 
-client = genai.Client(api_key="AIzaSyB4YGY73R8L0HxhWc8-xPQeny30xAoAhDM")
+client = genai.Client(api_key="")
 
 st.set_page_config(page_title="Doc Bot", page_icon="🌿", layout="wide")
 
